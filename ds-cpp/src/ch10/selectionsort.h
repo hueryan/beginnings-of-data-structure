@@ -21,7 +21,7 @@ void SelectionSort(T a[], int n)
         for (; j < n; j++)
             if (a[j] < a[k])
                 k = j;
-        if (j != k)
+        if (i != k)
             swap(a[k], a[i]);
     }
 }

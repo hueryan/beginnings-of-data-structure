@@ -86,6 +86,7 @@ void AddEdge(ALGraph<V, E, M> &G, int s, int t, E e = 1)
     p->adjvex = t;
     p->nextarc = G.vexs[s].firstarc;
     G.vexs[s].firstarc = p;
+    G.arcnum++;
 }
 
 ///

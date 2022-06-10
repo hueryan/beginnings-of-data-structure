@@ -15,7 +15,7 @@ void HeapAdjust(T a[], int s, int m)
 {
     // 暂存待插入元素（根结点 a[s]）
     T t = a[s];
-    // 延根结点向下逐步调整（较大的元素上调）
+    // 沿根结点向下逐步调整（较大的元素上调）
     for (int j = 2 * s + 1; j <= m; j = 2 * j + 1) // a[j] 的左孩子是 a[2j+1]
     {
         // 从 a[s] 的左右孩子 (a[2s+1] 和 a[2s+2]) 中选出最大的 a[j]
@@ -40,7 +40,7 @@ template <typename T>
 void HeapSort(T a[], int n)
 {
     // 把 a[0..n-1] 调整成大顶堆
-    for (int i = (n - 3) / 2; i >= 0; i--)
+    for (int i = n / 2 - 1; i >= 0; i--) // 最后一个非叶节点下标是 n/2-1
         HeapAdjust(a, i, n - 1);
     // 堆排序
     for (int i = n - 1; i > 0; i--) {
